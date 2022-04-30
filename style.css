@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700;800;900&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -28,8 +29,10 @@ button,a{
 }
 
 .navBar h1{
+    font-size: 1.8em;
+    font-family: 'Barlow', sans-serif;
     color: white;
-    font-weight: 700;
+    font-weight: 800;
 }
 .navBar img{
     display: none;
@@ -56,6 +59,12 @@ button,a{
     background-color: white;
     color: hsl(212, 27%, 19%);
     border-radius: 30px; 
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+.link:nth-child(4):hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
 }
 .navBarLinks li{
     min-width: 0;
@@ -73,8 +82,31 @@ main{
     height: 100vh;
     background-color: #3DBEFF;
 }
+.mainText{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    top: 25%;
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+.mainText h1{
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+.mainText img{
+    width: 5%;
+}
 .imgHeader{
     width: 80%;
+    margin: auto;
     height: 100%;
     position: absolute;
     top: 0;
@@ -120,8 +152,33 @@ main{
     
     font-size: 18px;
     color: hsl(212, 27%, 19%);
+    position: relative;
 }
+.contentLeft button:hover::after, .contentRight button:hover::after{
+    opacity: 1;
+}
+.contentLeft button::after,.contentRight button::after{
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1;
+    content: '';
+    width: 120%;
+    left: -10%;
+    height: 45%;
+    border-radius: 30px;
+    display: block;
+    position: absolute;
+    bottom: -10%;
+    opacity: 0;
+}
+.contentLeft button::after{
 
+    background-color: hsl(51, 100%, 49%);
+
+}
+.contentRight button::after{
+    background-color: hsl(7, 99%, 70%)
+
+}
 .cardLeft,.imgWText{
     grid-template-columns: repeat(2,50%);
     grid-template-rows: 100%;
@@ -275,7 +332,18 @@ main{
     font-family: 'Barlow', serif;    
     font-weight: 600;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:1200px) {
+ 
+    .navBarLinks{
+        width: 40%;
+    }
+}
+@media screen and (max-width:900px) {
+    .navBarLinks{
+        width: 50%;
+    }
+}
+    @media screen and (max-width:768px) {
     
     main{
         position: relative;
@@ -305,23 +373,37 @@ main{
         display: block;
     }
     .navBarLinks{
+        clip-path: polygon(0 7%, 0% 100%, 100% 99%, 100% 0%, 92% 7%);
+        column-gap: 10px;
+        padding: 10% 0 3% 0;
         z-index: 4;
         top: 15vh;
-        background-color: #3DBEFF;
+        background-color: white;
+        /*background-color: #3DBEFF;*/
         position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;  
-        width: 100%;
-        left: 0;
-        height: 55vh;
+        width: 90vw;
+        margin: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 40vh;
         justify-content: space-around;  
     }
     .link:not(.link:nth-child(4)){
         font-size: 1.3em;
+        color: hsl(232, 10%, 55%);
+
     }
-  
+  .link:nth-child(4){
+    background-color:hsl(51, 100%, 49%);
+  }
+  .link:nth-child(4):hover{
+    background-color:hsl(51, 100%, 58%);
+    color: black;
+}
     .hamburger{
         z-index: 4;
 
@@ -331,6 +413,12 @@ main{
     .navBarWrapper{
         overflow: hidden;
         width: 100%;
+    }
+    .mainText h1{
+        font-size: 2.5em;       
+    }
+    .mainText img{
+        width: 10%;
     }
     .cardLeft,.cardRight{
         grid-template-columns: 100%;
@@ -391,8 +479,7 @@ main{
         align-content: space-around; 
         width: 95%;
    }
-    .testimonials h1{
-    }
+
     .testimonial{
         row-gap: 5%;
         justify-content: center;
