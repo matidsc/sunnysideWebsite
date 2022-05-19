@@ -272,7 +272,7 @@ main{
     grid-row: 2/3;
 }
 .testimonial img{
-    width:20%;
+    width:30%;
     border-radius: 50%;
 }
 .testimonials h1{
@@ -337,10 +337,34 @@ main{
     .navBarLinks{
         width: 40%;
     }
+    .contentLeft, .contentRight{
+        padding: 20% 15%;
+        row-gap: 10%;
+    }
+    .contentLeft h1, .contentRight h1{
+        font-size: 1.8em;
+    }
+    .contentLeft p, .contentRight p{
+        font-size: 1em;
+    }
+    .imgText{
+        width: 90%;
+        top: 53%;
+    }
+    .imgText p{
+        margin-top: 5%;
+        font-size: 1em;
+    }
 }
 @media screen and (max-width:900px) {
     .navBarLinks{
         width: 50%;
+    }
+    .imgHeader{
+        height: 50%;
+        top: 100%;
+        transform: translateY(-100%);
+        margin: 0;
     }
 }
     @media screen and (max-width:768px) {
@@ -410,8 +434,8 @@ main{
     .hamburger{
         z-index: 4;
 
-        width: 10%;
-        height: 20%;
+        width: 0px;
+        height: 20px;
     }
     .navBarWrapper{
         overflow: hidden;
@@ -447,6 +471,14 @@ main{
     .imageRight img{
         content: url('/img/mobile/image-stand-out.jpg');
     }
+
+    .imgText{
+        top: 60%;
+    }
+    .imgText p{
+        margin-top: 10%;
+        font-size: 1em;
+    }
     .imgWText{
         grid-template-columns: 100%;
         grid-template-rows: repeat(2,50%);
@@ -473,11 +505,10 @@ main{
         content: url('./img/mobile/image-photography.jpg');
     }
     .testimonials{
-        display: grid;
         min-height: 150vh;  
         max-height: 170vh ;  
         align-items: center;
-        grid-template-rows: 7.5% 30% 30% 30%;
+        grid-template-rows: 7.5% auto auto auto;
         grid-template-columns: 100%;
         align-content: space-around; 
         width: 95%;
