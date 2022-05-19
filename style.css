@@ -433,8 +433,8 @@ main{
 }
     .hamburger{
         z-index: 4;
-
-        width: 0px;
+        display: block;
+        width: 30px;
         height: 20px;
     }
     .navBarWrapper{
